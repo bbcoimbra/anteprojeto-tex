@@ -1,9 +1,9 @@
-LATEX = /usr/bin/latex
-PDFLATEX = /usr/bin/pdflatex
-BIBTEX = /usr/bin/bibtex
+LATEX = which latex
+PDFLATEX = which pdflatex
+BIBTEX = which bibtex
 
 
-TARGET=main
+TARGET = main
 TRASH = *.aux *.log *.toc *~ *.blg *.bbl *.lof *.lot
 RM = /usr/bin/rm
 
