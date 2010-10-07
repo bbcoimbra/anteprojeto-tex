@@ -1,8 +1,10 @@
 \section{Metodologia}
 Como metodologia para este trabalho, será utilizada a apresetação de um
-programa compilador que recebe como entrada o código-fonte e gera um
-código-destino codificado em Assembly. O compilador pode ser dividido em
-quatro partes principais:
+programa aplicativo que contém compilador que receberá como entrada o
+código-fonte e gerará um código-destino codificado em \emph{JVM}
+\emph{bytecode} e uma representação gráfica em forma de fluxograma.
+
+O compilador pode será dividido em quatro partes principais:
 \begin{itemize}
 \item Analisador Léxico;
 \item Analisador Sintático;
@@ -11,22 +13,25 @@ quatro partes principais:
 \end{itemize}
 
 Para a executar a implemetação do Analisador Léxico, será utilidada uma
-implementação do \emph{lex}. Lex é um gerador de Analisadores Léxicos, ou
-seja, será o responsável por gerar as \emph{marcas}, ou lexemas
-(\emph{tokens}, em inglês), a partir do código-fonte.
+implementação do \emph{Lex}\cite{lex} em linguagem Java chamado
+\emph{JLex}\cite{jlex}. Lex é um gerador de Analisadores Léxicos, ou seja,
+será o responsável por gerar as \emph{marcas}, ou lexemas (\emph{tokens},
+em inglês), a partir do código-fonte.
 
 Apartir dos tokens produzidos, será construida uma Árvore Sintática Abstrata
 (Abstract Syntax Tree {--} AST), produto principal do processo de Análise
-Sintática. Para esta tarefa, será utilidada uma implementação do \emph{YACC}
-(Yet Another Compiler-Compiler {--} Um outro compilador de compiladores).
+Sintática. Para esta tarefa, será utilidada uma implementação do
+\emph{YACC}\cite{yacc} (Yet Another Compiler-Compiler {--}
+Um outro compilador de compiladores) escrita em \emph{Java} chamado
+\emph{beaver}\cite{beaver}.
 
 Tendo a AST do código-fonte, partimos para o processo de Análise Semântica.
 Para tanto, serão implementadas funções que varrerão a AST e
 \emph{"anotarão"} a AST conforme a Gramática de Atributos da Liguagem. Como
 produto desta etapa teremos a Tabela de Símbolos.
 
-Dado que teremos disponível a AST e a Tabela de Símbolos, e, também, estará
-definido o tipo de Ambiente Operacional (Totalmente Estático, Totalmente
-Dinâmico ou Híbrido), partiremos para o processo de Geração de Código. Esta
-etapa terá como produto o código Assembly semânticamente equivalente ao
-código-fonte.
+Dado que teremos disponível a AST e a Tabela de Símbolos, e, também,
+um Ambiente Operacional Totalmente Estático, partiremos para o processo
+de Geração de Código. Esta etapa terá como produtos a representação gráfica,
+\emph{fluxograma}, e o código \emph{bytecode} semânticamente
+equivalentes ao código-fonte.

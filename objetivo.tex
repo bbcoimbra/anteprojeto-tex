@@ -1,11 +1,23 @@
 \section{Objetivos}
 
-Este trabalho tem por objetivo a implementação de um
-Compilador que receberá como entrada um arquivo que contém
-um código-fonte de um programa escrito em uma linguagem formal
-ainda por ser definida e gerará um arquivo de saída que
-contenha um programa semanticamente equivalente, porém
-codificado em liguagem \emph{Assembly}.
+Este trabalho tem por objetivo a implementação de um programa
+aplicativo que poderá ser utilizado como ferramenta de apoio
+ao ensino de programação.
+
+O aplicativo conterá um Compilador que receberá como entrada
+um arquivo que contém um código-fonte de um programa escrito
+em uma linguagem formal ainda por ser definida e gerará como
+saídas uma representação gráfica semanticamente equivalente
+ao programa-fonte e uma representação em \emph{bytecode} que poderá
+ser executada em alguma implementação da \emph{JVM}.
+
+Havendo tempo hábil para a implementação, o aplicativo conterá um
+editor de texto integrado e possibilitará a execução do programa em
+modo de depuração. Quando executado neste modo, o aplicativo exibirá,
+em destaque, o trecho do programa-fonte e o bloco do fluxograma em
+execução. Também há o desejo de que seja implementado uma forma de
+inspecionar o conteúdo das variáveis do programa em execução no modo
+de depuração.
 
 Um compilador possui quatro partes principais, a saber, o
 Analisador Léxico, o Analisador Sintático, o Analisador
@@ -28,4 +40,4 @@ dividir o objetivo principal conforme abaixo:
 	\item Integrar todas as partes.
 \end{itemize}
 
-
+Por hora, não detalharemos os objetivos secundários.
